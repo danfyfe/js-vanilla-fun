@@ -1,8 +1,3 @@
-// function moveLegoMan(position){
-//   const legoMan = document.querySelector('#lego-man')
-//   `legoMan.style.${position}` = parseInt(`legoMan.style.${position}`) + 10 + 'px'
-// };
-
 document.addEventListener('DOMContentLoaded', event => {
   const div = document.querySelector('#text-div')
 
