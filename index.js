@@ -19,7 +19,6 @@ document.addEventListener('DOMContentLoaded', event => {
   legoMan.src = 'https://randomuser.me/api/portraits/lego/6.jpg'
 
   document.addEventListener('keydown', event => {
-
     switch (event.key) {
       case " ":
         imageContainer.appendChild(legoMan)
@@ -38,12 +37,22 @@ document.addEventListener('DOMContentLoaded', event => {
       case "ArrowRight":
         legoMan.style.left = parseInt(legoMan.style.left) + 10 + 'px'
         break;
+      case "Backspace":
+        legoMan.remove()
+        break;
       default:
         null
     }
+  });
+
+
+  fetch('https://pokeapi.co/api/v2/pokemon/ditto', {
+    method: 'GET'
+  }).then(resp => resp.json())
+  .then( data => {
+    let poke = document.createElement('img')
+    poke.src = data.sprites.front_default
+    imageContainer.appendChild(poke)
   })
-
-
-
 
 });
